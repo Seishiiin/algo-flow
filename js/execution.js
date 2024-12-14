@@ -1,10 +1,12 @@
 let variables = {};
+let skipLines = false;
 
 export function executePseudocode() {
     const pseudocode = document.getElementById("pseudocode").value.trim();
     const outputConsole = document.getElementById("outputConsole");
 
     variables = {};
+    skipLines = false;
 
     outputConsole.textContent = "";
 
@@ -15,6 +17,21 @@ export function executePseudocode() {
             line = line.trim();
 
             if (!line) return;
+            if (line.startsWith("//")) return;
+
+            if (line.startsWith("/%")) {
+                if (line.endsWith("%/")) {
+                    return;
+                } else {
+                    skipLines = true;
+                    return;
+                }
+            } else if (line.endsWith("%/")) {
+                skipLines = false;
+                return;
+            }
+
+            if (skipLines) return;
 
             if (line.startsWith("SHOW(\"")) {
                 const content = line.slice("SHOW".length).trim();

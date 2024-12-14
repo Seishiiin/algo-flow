@@ -48,6 +48,25 @@ Le langage **Algof** est conçu pour être **simple** et **accessible**. Voici l
     Hello, World!
     ```
     
+### 🔹 **3. Commentaires**
+- Ajoutez un commentaire avec `#`.
+  - **Format** : 
+    ```
+    // Ceci est un commentaire
+    /% Ceci est un
+    commentaire sur
+    plusieurs lignes %/
+    ```
+  - **Exemple** : 
+    ```
+    # Déclaration de la variable x
+    SET x = 5
+    
+    /% Déclaration de la variable message 
+    avec une chaîne de caractères %/
+    SET message = "Hello, World!"
+    ```
+    
 ### 🔹 **Fonctionnalités à venir (prochainement)**
 - **Boucles** (FOR, WHILE) `v2.0.0`
 - **Instructions conditionnelles** (IF, ELSE, ELSE IF) `v3.0.0`
